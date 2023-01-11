@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <ul>
+  <li><a th:href = "@{/Association/{id}/appels (id=${id})}" class="btn btn-primary btn-sm mb-3">Appel aux dons</a></li>
+  <li><a th:href="@{/Association/{id}/listBesoins (id=${id})}" class="btn btn-primary btn-sm mb-3">Besoins</a></li>
+  <li><a th:href = "@{/Association/{id}/listerOffre (id=${id})}"class="btn btn-primary btn-sm mb-3">Liste Offres</a>
+  <ul class="sous-liste">
+            <li><a th:href = "@{/a}" class="items-sous-liste">List Offres Menage</a></li>
+            <li><a th:href = "@{/a}" class="items-sous-liste">List Offres Restaurant</a></li>
+            <li><a th:href = "@{/a}" class="items-sous-liste">List Offre Boulangerie</a></li>
+  </ul>
+  </a>
+  </li>
+  <li><a href="about.asp" class="btn btn-primary btn-sm mb-3">classement</a></li>
+</ul>
+   
+  </body>
+</html>

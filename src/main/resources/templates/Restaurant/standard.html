@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="/styleMenage.css" />
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;900&display=swap"
+     rel="stylesheet"
+   />
+   <title>Menage</title>
+ </head>
+ <body>
+   <nav class="navbar">
+     <!-- LOGO -->
+     <img
+              src="images/52.png"
+              class="logo"
+              
+            />
+     <!-- NAVIGATION MENU -->
+     <ul class="nav-links">
+       <!-- USING CHECKBOX HACK -->
+       
+       <!-- NAVIGATION MENUS -->
+       <div class="menu">
+         <li><a th:href="@{/Restaurant/{id}/listOffre (id=${id})}">Mes offres</a></li>
+         <li><a th:href="@{/Restaurant/{id}/appels (id=${id})}">Appels Aux dons</a></li>
+         
+          <li><a th:href="@{/Restaurant/{id}/besoins (id=${id})}">Besoins de surplus alimentaire</a></li>
+         
+          
+         <li ><a href="/logout">Logout</a></li>
+       </div>
+     </ul>
+   </nav>
+   <div class="left">
+    <div class="wrapper">
+      <div class="profile-image"></div>
+
+      <div class="profile-bottom">
+        <div class="profile-infos">
+        <br />
+        <br />
+          <div class="main-infos">
+            <h3 class="name" th:text="${Restaurant.nomUtilisateur}"></h3>
+            <br />
+            <p class="age grey">Menage</p>
+          </div>
+          <p class="email" th:text="${Restaurant.email}"></p>
+          <p class="ville" th:text="${Restaurant.Ville}"><ion-icon name="location"></ion-icon></p>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+   <div class="right"></div>
+
+   <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+   
+ </body>
+
+
+</html>

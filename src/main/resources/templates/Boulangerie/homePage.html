@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page d'acceuil</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        
+        <nav>
+          <img
+              src="images/52.png"
+              class="logo"
+              
+            />
+          <ul>
+            
+            <li>
+              <a href="#">Nos accomplissements</a>
+            </li>
+
+            <li>
+              <a href="/registration" class="btn dark">S'inscrire</a>
+            </li>
+            
+            <li>
+              <a href="/login" class="btn green"> Se connecter</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Fin du logo et menu -->
+
+        <div class="general-presentation">
+          <div class="left">
+            <h1>
+              Luttons tous <br />
+              contre la faim
+            </h1>
+            <p>
+              Mettre fin à la faim est notre mission. <br />
+              Un simple offre de surplus alimentaire de vous sauve une vie.<br />Allez-y.
+              Inscrivez-vous. <br />
+            </p>
+            <a href="/registration" class="btn light enrol-icon">S'inscrire</a><br />
+          </div>
+          <div class="achievement-cards">
+            <div class="achievement-card users">
+              <div class="content">
+                <div>
+                  <h3 th:text="${B}+${R}+${A}+${M}"></h3>
+                </div>
+                <p>Utilisateurs</p>
+              </div>
+
+              <div class="bg"></div>
+            </div>
+            <div class="achievement-card assoc">
+              <div class="content">
+                <div>
+                  <h3 th:text="${A}"></h3>
+                </div>
+                <p><a th:href="@{/Association/list}" style="text-decoration: none;">Associations</a></p>
+              </div>
+
+              <div class="bg"></div>
+            </div>
+            <div class="achievement-card restau">
+              <div class="content">
+                <div>
+                  <h3 th:text="${R}"></h3>
+                </div>
+                 <p><a th:href="@{/Restaurant/list}" style="text-decoration: none;">Restaurants</a></p>
+              </div>
+
+              <div class="bg"></div>
+            </div>
+            <div class="achievement-card boulang">
+              <div class="content">
+                <div>
+                  <h3 th:text="${B}"></h3>
+                </div>
+                 <p><a th:href="@{/Boulangerie/list}" style="text-decoration: none;" >Boulangeries</a></p>
+              </div>
+
+              <div class="bg"></div>
+            </div>
+            <div class="achievement-card indiv">
+              <div class="content">
+                <div>
+                  <h3 th:text="${M}"></h3>
+                </div>
+                <p>Individus</p>
+              </div>
+
+              <div class="bg"></div>
+            </div>
+
+			<div class="achievement-card offres">
+              <div class="content">
+                <div>
+                  <h3 th:text="${O}"></h3>
+                </div>
+                <p>Offres</p>
+              </div>
+
+              <div class="bg"></div>
+            </div>
+            <div class="achievement-card appels">
+              <div class="content">
+                <div>
+                  <h3 th:text="${D}"></h3>
+                </div>
+                <p>Appels aux dons</p>
+              </div>
+
+              <div class="bg"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End of header section -->
+
+    <!-- Vousetes qui section -->
+    <div class="wrapper">
+      <section class="accounts">
+       
+        <div class="account-cards">
+        <div class="card">
+          <div class="restau-boulang">
+            <div class="title">
+              <img src="images/restaurant.png" alt="" width="50" />
+            <h3>Restaurant/Boulangerie</h3>
+
+            </div>
+            <p class="info">
+              Offrez vos surplus alimentaires pour augmenter votre Classement.
+              Ainsi vous pouvez lancez vos annonces de publicité sur notre site.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+
+          <div class="menage">
+            <div class="content">
+              <img src="images/individu.png" alt="" width="50" />
+              <h3>Individu</h3>
+            </div>
+
+            <p class="info">
+              Offrez vos surplus alimentaires et bénéficiez des code promos des
+              Restaurants et des boulangeries.
+            </p>
+          </div>
+        </div>
+        
+        <div class="card">
+
+          <div class="association">
+            <div class="content">
+              <img src="images/associa.png" alt="" width="50" />
+              <h3>Association</h3>
+            </div>
+            <p class="info">
+              Profitez des offres de surplus alimentaires de nos utlisateurs.
+              Lancez vos besoins et appels aux dons.
+            </p>
+          </div>
+        </div>
+      </div>
+      </section>
+    </div>
+  </div>
+    <!-- end of vous etes qui -->
+    <footer>
+      <div class="quick-links">
+        <!-- <a href="#">S'incrire</a> -->
+        <!-- <a href="#">Se connecter</a> -->
+      </div>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+      />
+      Made with <i class="icon ion-heart"></i> 
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

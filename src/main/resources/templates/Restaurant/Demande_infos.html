@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Demandes</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<th:block th:include="Restaurant/standard"></th:block>
+	<div class="container">
+	<div class="center" style="margin-left: 10% ;" >
+	<div class="card">
+	  <div class="card-body" style="color:#26B893;"><h2>Les détails de l'association qui demande de profiter de votre offre</h2></div>
+	</div>
+		<hr>
+		 <tr th:each="Association :${offre.Associations}">
+		<div class="card border border-info shadow-0 mb-3" style="max-width: 100%;text-align:center;">
+		  <div class="card-header" th:text="${Association.nomUtilisateur}"></div>
+		  <div class="card-body">
+		    <p class="card-text" th:text="${Association.Ville}"></p>
+		    <p class="card-text" th:text="${Association.adresse}"></p>
+		    <p class="card-text" th:text="${Association.Email}"></p>
+		    <p class="card-text" th:text="${Association.bio}"></p>
+		 </div>
+		  </div>
+		   </tr>
+		  </div>
+	</div>
+</body>
+</html>

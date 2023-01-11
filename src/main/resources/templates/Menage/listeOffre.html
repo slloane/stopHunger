@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<th:block th:include="Menage/standard"></th:block>
+<div class="center">
+  <div class="header ">
+      <h1>Liste des Offres : </h1>
+      <br>
+	<a th:href = "@{/Menage/{id}/showNewOffreForm (id=${Menage.id}) }" class="button-3"role="button"> Ajouter une Offre </a>
+	  <table class="content-table" width="100%">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>Etat</th>
+					<th>Quantite</th>
+					<th>Date_Expiration</th>
+					<th>Type</th>
+					<th>Actions</th>
+						
+				</tr>	
+				</thead>
+				<tbody>
+				<tr th:each="offre :${ListOffres}">
+				  <td th:text="${offre.id}"></td>
+				  <td th:text="${offre.Etat}"></td>
+				  <td th:text="${offre.Quantite}"></td>
+				  <td th:text="${offre.date_Expiration}"></td>
+				  <td th:text="${offre.type}"></td>
+				  <td> <a th:href="@{/Menage/{id1}/showFormForUpdateOffre/{id}(id=${offre.id}, id1=${Menage.id})}" class="button-3"role="button">Modifier</a>
+				  <a th:if ="${offre.Associations!=null}" th:href="@{/Menage/{id1}/demandeOffre/{id}(id=${offre.id}, id1=${Menage.id})}" class="button-3"role="button">Demandes</a>
+				       <a  th:href="@{/Menage/{id1}/deleteOffre/{id}(id=${offre.id}, id1=${Menage.id})}" class="button-3"role="button">Supprimer</a>
+				  </td>
+				 </tr>
+				</tbody>
+			</table>
+	
+	
+		</div>
+	</div>	
+</body>
+</html>

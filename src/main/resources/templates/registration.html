@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+	<link rel="stylesheet" href="/form.css" />
+</head>
+<body style="background: linear-gradient(180deg, #26B893 0%, #74ba6e 100%);">
+
+	<!-- Create HTML registration form -->
+	
+	<div class="container" >
+	
+	
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+
+				<!-- success message -->
+				<div th:if="${param.success}">
+					<div class="alert alert-info">L'inscription a été faite avec succès! Bienvenue dans notre super application!</div>
+				</div>
+				<h1 style="text-align: center;color:white;">Registration</h1>
+				<div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+				<form th:action="@{/registration}" method="post" th:object="${user}">
+				
+					<div class="form-group">
+						<label class="control-label" for="nomUtilisateur"> Nom utilisateur </label>
+						<input id="nomUtilisateur" class="form-control" th:field="*{nomUtilisateur}"
+							required autofocus="autofocus" />
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="email"> Email </label> <input
+							id="email" class="form-control" th:field="*{email}" required
+							autofocus="autofocus" />
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="Ville"> Ville </label> <input
+							id="Ville" class="form-control" th:field="*{Ville}"
+							required autofocus="autofocus" />
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="adresse"> Adresse </label> <input
+							id="adresse" class="form-control" th:field="*{adresse}"
+							required autofocus="autofocus" />
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="description"> description </label> <input
+							id="description" class="form-control" th:field="*{bio}"
+							required autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="CategorieCmpte"> Type de Compte </label>
+						<select th:field="*{CategorieCmpte}" class="form-control">
+						    <option value="">--Selectionner le type--</option>
+						    <option value="Boulangerie">Boulangerie</option>
+						    <option value="Association">Association</option>
+						    <option value="Restaurant">Restaurant</option>
+						    <option value="Menage">Menage</option>
+						    
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="password"> Mot de passe </label> <input
+							id="password" class="form-control" type="password"
+							th:field="*{Password}" required autofocus="autofocus" />
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="password"> Valider mot de passe </label> <input
+							id="password" class="form-control" type="password" required autofocus="autofocus" />
+					</div>
+					
+
+					<div class="form-group">
+					<div class="field padding-bottom--24">
+						<button type="submit" class="btn btn-success">Valider l'inscription</button>
+					</div>
+						<br>
+						<span>Déjà inscrit? <a href="/" th:href="@{/login}">s'authentifier
+								ici</a></span>
+					</div>
+				</form>
+				</div>
+		</div>
+	</div>
+	
+			</div>
+		</div>
+	</div>
+</bodystyle>
+</html>

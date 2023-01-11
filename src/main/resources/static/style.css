@@ -1,0 +1,438 @@
+:root {
+  --orange: #FF7F50;
+  --darkBlue: #023047;
+  --blue: #228B22;
+  --lightblue: #E8F7FB;
+  --black: #070917;
+  --violet: #6F7DFB;
+  /* ; */
+
+  --green: #26B893	;
+  --grenner:#008000;
+
+
+}
+
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  max-width: 1134px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 24px;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+}
+
+.btn.dark {
+  background: var(--orange);
+}
+
+.btn.green {
+  background-color: var(--blue);
+}
+
+.btn.light {
+  background: var(--grenner);
+}
+
+.btn.enrol-icon::before {
+  content: url("images/signupIcon.svg");
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  transform: translateY(-50%);
+}
+
+.btn.enrol-icon {
+  padding-left: 60px;
+}
+
+.wrapper {
+  max-width: 1134px;
+  margin: 0 auto;
+  /* background-color: #6F7DFB; */
+
+
+}
+
+/* Header */
+header {
+  background: linear-gradient(180deg, #26B893 0%, #74ba6e 100%);
+  /* background-color: #6F7DFB; */
+  height: 100vh;
+  width: 100%;
+}
+
+.logo {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 8%;
+  height: 8%;
+
+  /* border-bottom-left-radius:120px; */
+  /* border-top-right-radius:120px; */
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 1134px;
+  top: 36px;
+  z-index: 100;
+  transition: all 500ms ease;
+
+}
+nav.scrolled {
+  background: var(--black);
+  box-shadow: 0 16px 14px -8px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 8px 8px;
+  top: 0;
+  padding: 12px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 60px;
+}
+
+nav ul a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+
+}
+
+/* fin logo etmenu */
+/* generalPresentation */
+.general-presentation {
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+
+  padding-top: 50px;
+}
+
+.general-presentation.left h1 {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 125%;
+  color: #fff;
+  /* or 62px */
+}
+
+.general-presentation.left p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
+  /* or 32px */
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.general-presentation.left {
+  width: 457px;
+}
+
+
+.achievement-card {
+  position: absolute;
+  min-width: 200px;
+  color: var(--dark-blue-color);
+}
+
+.achievement-card .content {
+  border-radius: 24px;
+  background: #fff;
+  padding: 8px 32px;
+  z-index: 10;
+  position: relative;
+}
+
+.achievement-card.users {
+  left: 70%;
+  top: 180px;
+}
+
+.achievement-card.assoc {
+  left: 60%;
+  top: 310px;
+}
+
+.achievement-card.restau {
+  left: 80%;
+  top: 310px;
+}
+.achievement-card.offres {
+  left: 60%;
+  top: 570px;
+}
+
+.achievement-card.appels {
+  left: 80%;
+  top: 570px;
+}
+
+.achievement-card.boulang {
+  left: 60%;
+  top: 440px;
+}
+
+.achievement-card.indiv {
+  left: 80%;
+  top: 440px;
+}
+
+
+
+.achievement-card .content div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.achievement-card h3 {
+  font-weight: bold;
+  font-size: 36px;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  flex: 1;
+}
+
+.achievement-card img {
+  flex: 1;
+  height: 42px;
+  margin-left: -24px;
+}
+
+.achievement-card p {
+  font-weight: normal;
+  font-size: 16px;
+  margin-top: -8px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.achievement-card .bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #26B893 0%, #135f0c 100%);
+  border-radius: 24px;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+}
+
+section {
+  margin-top: 100px;
+  height: 130vh;
+
+}
+
+section h2 {
+  font-family: 'Raleway', sans serif;
+  margin: 0;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 120%;
+  color: var(--darkBlue);
+}
+section p{
+  font-family: 'Poppins';
+font-weight: 400;
+font-size: 16px;
+line-height: 200%;
+color: var(--darkBlue);
+margin: 12px 0px;
+left: 50%;
+}
+div.intro{
+  align-items: center;
+
+}
+.accounts .card{
+width: 442px;
+
+
+background: #b10909;
+box-shadow: 0px 9px 36px rgba(0, 0, 0, 0.2);
+border-radius: 24px;
+
+}
+.accounts .card .menage{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  
+  position: absolute;
+  width: 442px;
+  height: 222px;
+  left: 698px;
+  top: 839px;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 9px 36px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+}
+.accounts .card .restau-boulang{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  
+  position: absolute;
+  width: 442px;
+  height: 222px;
+  top:839px;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 9px 36px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+}
+.accounts .card .restau-boulang .info{
+  padding-left: 20px;
+}
+.accounts .card .association{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  
+  position: absolute;
+  width: 442px;
+  height: 222px;
+  top:1080px;
+  left:35%;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 9px 36px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+
+}
+.accounts .card .restau-boulang h3{
+  display: flex;
+align-items: flex-start;
+padding: 10px 20px;
+gap: 0px;
+left: 20%;
+width: 442px;
+height: 80px;
+margin-top: auto;
+padding-top: 20px;
+
+background: var(--green);
+border-radius: 24px;
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+padding-left: 60px;
+
+}
+
+.accounts .card .restau-boulang img{
+  flex: 1;
+  height: 30px;
+  margin-left: 8px;
+  margin-top: 20px;
+  width: 30px;
+  position: absolute;
+  vertical-align: middle;
+
+}
+
+/* Individu */
+.accounts .card .menage h3{
+  display: flex;
+align-items: flex-start;
+padding: 10px 20px;
+gap: 0px;
+left: 20%;
+width: 442px;
+height: 80px;
+margin-top: auto;
+padding-top: 20px;
+background: var(--green);
+border-radius: 24px;
+padding-left: 20%;
+
+}
+.accounts .card .menage img{
+  flex: 1;
+  height: 30px;
+  margin-left: 8px;
+  margin-top: 18px;
+  width: 30px;
+  position: absolute;
+  vertical-align: middle;
+}
+.accounts .card .menage .info{
+  padding-left: 20px;
+}
+/* Association */
+.accounts .card .association h3{
+  display: flex;
+align-items: flex-start;
+padding: 10px 20px;
+gap: 0px;
+left: 20%;
+width: 442px;
+height: 80px;
+margin-top: auto;
+padding-top: 20px;
+background: var(--green);
+border-radius: 24px;
+padding-left: 20%;
+
+}
+.accounts .card .association img{
+  flex: 1;
+  height: 50px;
+  margin-left: 8px;
+  margin-top: 15px;
+  width: 50px;
+  position: absolute;
+  vertical-align: middle;
+}
+.accounts .card .association .info{
+  padding-left: 20px;
+}
+footer{
+  background: var(--black);
+  color: #fff;
+  padding-left: 50%;
+}

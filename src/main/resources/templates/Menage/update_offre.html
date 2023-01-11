@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+<th:block th:include="Menage/standard"></th:block>
+ <link rel="stylesheet" href="/form.css" />
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;900&display=swap"
+     rel="stylesheet"
+   />
+<div class="center">
+	<div class="container">
+	<h1>Modifier une Offre</h1>
+          <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              
+		<hr>
+		
+		
+
+		<form action="#" th:action="@{/Menage/{id}/saveOffre (id=${Menage.id})}" th:object="${offre}" method="POST">
+			<!-- Add hidden form field to handle update -->
+		   <input type="hidden" th:field="*{id}" />
+			
+           <div class="field padding-bottom--24">
+			
+			<label for="email">Etat de l'offre:</label>
+			<input type="text" th:field="*{Etat}" placeholder="Etat offre'" class='input-line full-width'>
+			</div>
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+				
+		      <label for="password">Quantite:</label>
+				
+				<input type="text" th:field="*{Quantite}" placeholder="Quantite Offre" class='input-line full-width'>
+	             </div>
+                <div class="field padding-bottom--24">
+	             <label for="email">Date d'expiration:</label>
+				
+				<input type="datetime-local" value="2018-07-22" th:field="*{date_Expiration}" placeholder="Date_Expiration Offre" class='input-line full-width'>
+				 </div>
+                  <div class="field padding-bottom--24">
+                    <label for="email">Type d'offre:</label>
+				<input type="text" th:field="*{type}" placeholder="Type Offre" class='input-line full-width'>
+				  
+                  </div>  
+                
+                <div class="field padding-bottom--24">
+                  <input type="submit" name="submit" value="Modifier Offre">
+                  
+                </div>
+				
+		</form>
+		
+		<hr>
+	</div>
+	</div>
+</body>
+</html>

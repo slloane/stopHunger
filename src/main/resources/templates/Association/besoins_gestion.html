@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<th:block th:include="Association/standard"></th:block>
+	<div class="center">
+  <div class="header ">
+	<h1>Liste des besoins</h1>
+	<br>		
+			<a th:href = "@{/Association/{id}/showNewBesoinForm (id=${Association.id}) }" class="button-3"role="button"> Ajouter un Besoin </a>
+	</div>
+	  <table class="content-table" width="100%">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>Nbr plats</th>
+					<th>Date</th>
+					<th>Type</th>
+					<th>Actions</th>
+						
+				</tr>	
+				</thead>
+				<tbody>
+				<tr th:each="besoin :${ListBesoins}">
+				  <td th:text="${besoin.id}"></td>
+				  <td th:text="${besoin.nbrePlats}"></td>
+				  <td th:text="${besoin.dateBesoin}"></td>
+				  <td th:text="${besoin.typePlat}"></td>
+				  <td> <a th:href="@{/Association/{id1}/showFormForUpdateBesoin/{id}(id=${besoin.id}, id1=${Association.id})}" class="button-3"role="button">Modifier</a>
+				       <a  th:href="@{/Association/{id1}/deleteBesoin/{id}(id=${besoin.id}, id1=${Association.id})}" class="button-3"role="button">Supprimer</a>
+					</td>
+				</tr>
+	 		</tbody>
+		</table>
+	
+	</div>
+		
+	</div>	
+</body>
+</html>

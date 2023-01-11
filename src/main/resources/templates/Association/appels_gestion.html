@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<th:block th:include="Association/standard"></th:block>
+	<div class="center">
+  <div class="header ">
+			<h1>Liste des appels Aux Dons</h1>
+	<br>		
+			<a th:href = "@{/Association/{id}/showNewAppelsAuxDonsForm (id=${Association.id})}" class="button-3"role="button"> Ajouter un appel aux dons </a>
+	</div>
+	  <table class="content-table" width="100%">
+			<thead>
+				<tr>
+								<th>
+									id
+								</th>
+								<th>
+									Description
+								</th>
+								<th>
+									Objectif
+								</th>
+								<th>
+									Montant cible
+								</th>
+								<th>
+								Gens ciblés
+								</th>
+								<th>
+								Statut
+								</th>
+								<th> Actions </th>
+							</tr>
+						</thead>
+					    <tbody>
+								<tr th:each="AppelsAuxDons : ${appels}">
+									<td th:text="${AppelsAuxDons.id}"></td>
+									<td th:text="${AppelsAuxDons.description}"></td>
+									<td th:text="${AppelsAuxDons.objectif}"></td>
+									<td th:text="${AppelsAuxDons.montant_cible}"></td>
+									<td th:text="${AppelsAuxDons.gens_cible}"></td>
+									<td th:text="${AppelsAuxDons.statut}"></td>
+									<td> <a th:href="@{/Association/{id1}/showFormForUpdateAppels/{id}(id=${AppelsAuxDons.id}, id1=${Association.id})}" class="button-3"role="button">Modifier</a>
+									    <a th:href="@{/Association/{id1}/deleteAppelsAuxDons/{id}(id=${AppelsAuxDons.id}, id1=${Association.id})}" class="button-3"role="button">Supprimer</a>
+									</td>
+								</tr>
+					 	</tbody>
+			</table>
+	
+		</div>
+		
+	</div>	
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management System</title>
+
+ <link rel="stylesheet" href="/form.css" />
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;900&display=swap"
+     rel="stylesheet"
+   />
+</head>
+<body>
+<th:block th:include="Association/standard"></th:block>
+<link rel="stylesheet" href="/form.css" />
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;900&display=swap"
+     rel="stylesheet"
+   />
+
+	<div class="center">
+	<div class="container">
+		
+		<h1>Modifier besoin</h1>
+
+		<div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              
+		<hr>
+		
+		
+
+		<form action="#" th:action="@{/Association/{id}/saveBesoin (id=${Association.id})}"  th:object="${besoin}" method="POST">
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}" />
+           <div class="field padding-bottom--24">
+			
+			<label for="email">Nombre de plats :</label>
+            <input type="text" th:field="*{nbrePlats}" class='input-line full-width'>
+			
+			</div>
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+				
+		      <label for="password">Date de besoin:</label>
+                 <input type="text" th:field="*{dateBesoin}" class="form-control mb-4 col-4">
+		       
+				             </div>
+                
+                  <div class="field padding-bottom--24">
+                    <label for="email">Type de plats:</label>
+              	<input type="text" th:field="*{typePlat}" class='input-line full-width'>
+                    				  
+                  </div>  
+                
+                <div class="field padding-bottom--24">
+                  <input type="submit" name="submit" value="Modifier Besoin">
+                  
+             </div>
+				
+		</form>
+		
+		<hr>
+		
+		
+	</div>
+	</div>
+</body>
+</html>

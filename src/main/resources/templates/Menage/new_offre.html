@@ -1,0 +1,57 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>Stackfindover: Sign in</title>
+     <link rel="stylesheet" href="/form.css" />
+  
+</head>
+<body>
+<th:block th:include="Menage/standard"></th:block>
+	<div class="center1">
+
+		<h1>Ajouter une Offre</h1>
+		<div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+		<form action="#" th:action="@{/Menage/{id}/saveOffre (id=${Menage.id})}" th:object="${offre}" method="POST">
+		
+			 <div class="field padding-bottom--24">
+                  <label for="email">Etat de l'offre:</label>
+      			<input type="text" th:field="*{Etat}" placeholder="Etat offre" class='input-line full-width'></input>
+      
+                </div>
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Quantite:</label>
+                  </div>
+               <input type="text" th:field="*{Quantite}" placeholder="Quantite Offre" class='input-line full-width'>
+                  
+                  
+                </div>
+                <div class="field padding-bottom--24">
+                    <label for="email">Date d'expiration:</label>
+                    <input type="datetime-local" th:field="*{date_Expiration}" placeholder="Date" class='input-line full-width'></input>
+                    
+                  </div>
+                  <div class="field padding-bottom--24">
+                    <label for="email">Type d'offre:</label>
+                   <input type="text" th:field="*{type}" placeholder="Type Offre" class='input-line full-width'></input>
+                    
+                  </div>  
+                
+                <div class="field padding-bottom--24">
+                  <input type="submit" name="submit" value="Ajoutter Offre">
+                  
+                </div>
+                
+              </form>
+
+     		 </div>
+    
+   		</div>
+      </div>
+      </div>
+   
+</body>
+
+</html>

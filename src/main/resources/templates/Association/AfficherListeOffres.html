@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<th:block th:include="Association/standard"></th:block>
+	<div class="center">
+  <div class="header ">
+	<h1>Liste des Offres Boulangeries/Restaurants et Menages</h1>
+	 </div>
+   
+	
+	  <table class="content-table" width="100%">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>Etat</th>
+					<th>Quantite</th>
+					<th>Date_Expiration</th>
+					<th>Type</th>
+					<th>Actions</th>
+						
+				</tr>	
+				</thead>
+				<tbody>
+				<tr th:each="offre :${ListOffres}">
+				  <td th:text="${offre.id}"></td>
+				  <td th:text="${offre.Etat}"></td>
+				  <td th:text="${offre.Quantite}"></td>
+				  <td th:text="${offre.date_Expiration}"></td>
+				  <td th:text="${offre.type}"></td>
+				  <td> <a th:href="@{/Association/{id}/saveDemande/{id1}(id=${Association.id}, id1=${offre.id})}" class="button-3"role="button">Demander L'offre</a>
+				  <a th:href="@{/Association/{id}/offres/infos/{id1}(id=${Association.id}, id1=${offre.id})}" class="button-3"role="button">Details de  L'offre</a>
+				       
+				  </td>
+				 </tr>
+				</tbody>
+			</table>
+	
+	</div>
+		
+	</div>	
+</body>
+</html>

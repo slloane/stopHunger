@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Liste des Offres</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	
+</head>
+<body>
+
+	<div  class="container my-2">
+	<h1>Liste des Offres</h1>
+	
+	  <table border="1" class = "table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>Etat</th>
+					<th>Quantite</th>
+					<th>Date_Expiration</th>
+					<th>Type</th>
+					<th>Actions</th>
+						
+				</tr>	
+				</thead>
+				<tbody>
+				<tr th:each="offre :${ListOffres}">
+				  <td th:text="${offre.id}"></td>
+				  <td th:text="${offre.Etat}"></td>
+				  <td th:text="${offre.Quantite}"></td>
+				  <td th:text="${offre.date_Expiration}"></td>
+				  <td th:text="${offre.type}"></td>
+				  <td> <a th:href="@{/hii/{id}(id=${offre.id})}" class="btn btn-primary">Demander L'offre</a>
+				       
+				  </td>
+				 </tr>
+				</tbody>
+			</table>
+	
+	
+		
+	</div>	
+</body>
+</html>

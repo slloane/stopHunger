@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Appels aux dons Management System</title>
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous">	
+	</head>
+	<body>
+	<ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <a class="nav-link" th:href="@{/Boulangerie/{id}/listOffre (id=${id})}">mes offres</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" th:href="@{/Boulangerie/{id}/besoins (id=${id})}">besoins</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" th:href="@{/Boulangerie/{id}/appels (id=${id})}">appels aux dons</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" th:href="@{/Boulangerie/{id}/list (id=${id})}">classement</a>
+  </li>
+  
+</ul>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<th:block th:include="Restaurant/standard"></th:block>
+<div class="center">
+  <div class="header ">
+	<h1>Liste des Besoins</h1>
+	</div>
+   
+	
+	  <table class="content-table" width="100%">
+			<thead>
+				<tr>
+					<th>
+						Nbre Plats
+					</th>
+					<th>
+					Date Besoin
+					</th>
+					<th>
+                       Type Plat
+					</th>
+					<th>
+                       Actions
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="besoin : ${ListeBesoins}">
+					<td th:text="${besoin.nbrePlats}"></td>
+					<td th:text="${besoin.dateBesoin}"></td>
+					<td th:text="${besoin.typePlat}"></td>
+					<td>
+					<a th:href="@{/Restaurant/{id1}/Besoin/infos/{id}(id=${besoin.id}, id1=${id})}" class="button-3"role="button">Satisfaire</a> 
+					 </td>
+				 </tr>
+				</tbody>
+			</table>
+       
+   </div>
+   </div>
+</body>
+</html>

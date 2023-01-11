@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Appels aux dons Management System</title>
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous">	
+	</head>
+	<th:block th:include="Boulangerie/standard"></th:block>
+		<div class="container">
+	<div class="center">
+	<div class="card" style="text-align: center;">
+	  <div class="card-body" style="color:#26B893;"><h2>Les appels aux dons</h2></div>
+	  
+	</div>
+	   <div th:each="AppelsAuxDons : ${listAppelsAuxDons}" class="card mb-4 box-shadow" style="text-align: center;">
+          <div class="card-header">
+            <h4 th:text="${AppelsAuxDons.objectif}" class="my-0 font-weight-normal"></h4>
+          </div>
+          <div class="card-body">
+          <h4 th:text="${AppelsAuxDons.description}"></h4>
+          <p><h4 style="color:#26B893;">Goal</h4><h3 th:text="${AppelsAuxDons.montant_cible}+'  DH'"></h3></p>
+            <ul class="list-unstyled mt-3 mb-4">
+              
+              <h4 style="color:#26B893;">catégorie ciblée</h4><li th:text="${AppelsAuxDons.gens_cible}"></li>
+              <h4 style="color:#26B893;">statut</h4><li th:text="${AppelsAuxDons.statut}"></li>
+            </ul>
+            <a th:href="@{/Boulangerie/{id}/Association/infos/{id1}(id1=${AppelsAuxDons.id}, id=${id})}" class="button-3"role="button">Donner</a>
+           
+          </div>
+        </div>
+							
+			         <div th:if = "${totalPages > 1}">
+						<div class = "row col-sm-10">
+							<div class = "col-sm-2">
+								Total Rows: [[${totalItems}]] 
+							</div>
+							<div class = "col-sm-1">
+								<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+									<a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+									<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+								</span>
+							</div>
+							<div class = "col-sm-1">
+								<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+								<span th:unless="${currentPage < totalPages}">Next</span>
+							</div>
+							 <div class="col-sm-1">
+			    				<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+								<span th:unless="${currentPage < totalPages}">Last</span>
+			   				 </div>
+						</div>
+					</div>
+					</div>
+	    </div>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>liste des Boulangeries</title>
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous">	
+	</head>
+	<th:block th:include="Menage/standard"></th:block>
+		<div class="container my-2">
+			<h1>Boulangeries classées par ordre de participation</h1>    
+	   <div th:each="r, state : ${Restaurants}" class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 th:text="${r.nomUtilisateur}" class="my-0 font-weight-normal"></h4>
+          </div>
+          <div class="card-body">
+          <small>adresse</small><h3 th:text="${r.adresse}"></h3>
+            <ul class="list-unstyled mt-3 mb-4">
+              <small>ville</small><li th:text="${r.ville}"></li>
+               <small>Points</small><li th:text="${r.points}"></li>
+               <small>Rang</small><li th:text="${state.count}"></li>
+            </ul>
+           
+          </div>
+        </div>
+							
+			         <div th:if = "${totalPages > 1}">
+						<div class = "row col-sm-10">
+							<div class = "col-sm-2">
+								Total Rows: [[${totalItems}]] 
+							</div>
+							<div class = "col-sm-1">
+								<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+									<a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+									<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+								</span>
+							</div>
+							<div class = "col-sm-1">
+								<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+								<span th:unless="${currentPage < totalPages}">Next</span>
+							</div>
+							 <div class="col-sm-1">
+			    				<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+								<span th:unless="${currentPage < totalPages}">Last</span>
+			   				 </div>
+						</div>
+					</div>
+	    </div>
+	</body>
+</html>
